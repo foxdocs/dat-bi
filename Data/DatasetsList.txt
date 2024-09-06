@@ -1,0 +1,24 @@
+https://archive.ics.uci.edu/ml/datasets.php
+https://www.kaggle.com/datasets
+https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research
+https://towardsdatascience.com/top-sources-for-machine-learning-datasets-bb6d0dc3378b
+https://grouplens.org/datasets/
+https://metatext.io/redirect/financialphrasebank
+
+
+
+
+https://towardsdatascience.com/hdbscan-clustering-with-neo4j-57e0cec57560
+
+ovr
+vr
+
+
+So I had the same pb with the latest version (1.3.10) and went through the same fix solution, except this is on mac, with the following file path:
+
+/Users/[user name]/Library/Application Support/Neo4j Desktop/Application/graphApps
+
+Delete the Bloom.tar.gz
+
+Hope that will help some Mac users
+
