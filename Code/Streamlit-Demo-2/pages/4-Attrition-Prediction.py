@@ -3,7 +3,7 @@ import joblib
 
 model = joblib.load('./model/nbmodel.pkl')
 
-st.title("Make a Prediction")
+st.title("Make Prediction")
 st.sidebar.header("Make a Prediction", divider='rainbow')
 
 st.write("We have trained a  model to predict your job attitude.")

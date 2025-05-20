@@ -37,8 +37,8 @@ if tab is not None:
         pass
     
 st.pydeck_chart(pdk.Deck(
-    map_style=None,
-    initial_view_state=pdk.ViewState(latitude=47, longitude=-122, zoom=12, pitch=50),
+    # map_style=None,     
+    initial_view_state=pdk.ViewState(latitude=55.6761, longitude=12.5683, zoom=6, pitch=50),
     layers=[
         pdk.Layer(
            'HexagonLayer',

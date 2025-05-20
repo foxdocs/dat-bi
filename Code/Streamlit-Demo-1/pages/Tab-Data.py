@@ -49,7 +49,7 @@ def eda(df):
 
 # Prepare data for vizualisation
 def viz1(df):
-        st.header('Data Visualisation 1')
+        st.header('Data Visualisation')
         st.subheader('Grouping by a Nominal Attribute')
         a = st.selectbox('**Select the nominal attribute, A**', df.columns)
         b = st.selectbox('**Select first measure, B**', df.columns)
@@ -59,7 +59,7 @@ def viz1(df):
     
 # Prepare data for second vizualisation    
 def viz2(df):
-        st.header('Data Visualisation 2')
+        st.header('Data Visualisation')
         st.subheader('Dimensions and Measures')
         x = st.selectbox('**Select the first dimension, X**', df.columns)
         z = st.selectbox('**Select the second dimension, Z**', df.columns)
@@ -72,7 +72,7 @@ def charts():
         
             tab1, tab2, tab3, tab4 = st.tabs(['Bar Chart', 'Line Chart', "2D Scatter Plot", "3D Scatter Plot"])
             with tab1: # bar chart    
-                st.bar_chart(df, x=a, y=[b, c], color=['#FF0000', '#0000FF'])  
+                st.bar_chart(df, x=x, y=[y, z], color=['#FF0000', '#0000FF'])  
                 
             with tab2: # line chart
                 st.line_chart(df, x=x, y=[y, z], color=["#FF0000", "#0000FF"])
@@ -105,7 +105,7 @@ except:
 st.success("👆 Select the attributes of interest")
     
 eda(df)
-a, b, c = viz1(df)
+# a, b, c = viz1(df)
 x, y, z = viz2(df)
 
 if st.button(":blue[EDA]"):
