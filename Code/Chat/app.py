@@ -34,8 +34,10 @@ def available_models():
 
 def main():
     st.title("RAG Chat")
-    st.markdown("<p style='text-align: left; color: #666;'>Powered by Ollama models, langchain, and unstructured</p>", unsafe_allow_html=True)
-
+    st.markdown("<p style='text-align: left; color: #666;'>Powered by Ollama models, LangChain and Unstructured</p>", unsafe_allow_html=True)
+    st.write("Created with :blue_heart: by Dora Dimitrova")
+    st.write("")
+    
     # Sidebar controls
     with st.sidebar:
         st.header("Config")
