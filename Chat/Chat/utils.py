@@ -1,4 +1,4 @@
-
+# Utility functions for RAG Chat
 
 # for deployment and UI
 import streamlit as st
@@ -20,13 +20,9 @@ Answer:
 from langchain_community.document_loaders import SeleniumURLLoader
 
 
-
 # for reading and parcing multimodal pdf
 from unstructured.partition.pdf import partition_pdf
 from unstructured.partition.utils.constants import PartitionStrategy
-
-
-# In[ ]:
 
 
 # for help of open-source LLMs
@@ -35,19 +31,12 @@ from langchain_ollama.llms import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
 
-# In[ ]:
-
 
 # for text pre-processing
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
 
-
-embeddings = OllamaEmbeddings(model="llama3.2:3b")
-vector_store = InMemoryVectorStore(embeddings)
-
-llm = OllamaLLM(model = "gemma3:12b")
-
+# Web
 # load page
 def load_web_page(url):
     loader = SeleniumURLLoader(urls=[url])
@@ -66,11 +55,16 @@ def split_web_text(docs):
     return data
 
 
+def store_web_docs(docs, vector_store):
+    vector_store.add_documents(docs)
+    return
+    
+
+# PDF
 # load pdf
 def upload_pdf(file):
     with open(data + file.name, "wb") as f:
         f.write(file.getbuffer())
-
 
 
 # extend llm with images
@@ -78,8 +72,6 @@ def text_from_image(file_path):
     print(file_path)
     model_with_image_context = llm.bind(images=[file_path])
     return model_with_image_context.invoke("Tell me what do you see in this picture.")
-
-
 
 
 # parse pdf content
@@ -105,42 +97,23 @@ def parse_pdf(file_path, media):
 
     return "\n\n".join(text_elements)
 
-
-
 def split_pdf_text(text):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
         add_start_index=True
     )
-
     return text_splitter.split_text(text)
 
-
-
-
-def store_web_docs(docs):
-    vector_store.add_documents(docs)
-    return
-
-
-
-
-def store_pdf_docs(texts):
+def store_pdf_docs(texts, vector_store):
     vector_store.add_texts(texts)
     return
 
-
-# In[ ]:
-
-
-def retrieve_docs(query):
+# both
+def retrieve_docs(query, vector_store):
     return vector_store.similarity_search(query)
 
-
-
-
-def answer_question(question, documents):
+def answer_question(question, documents, llm):
     context = "\n\n".join([doc.page_content for doc in documents])
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | llm
