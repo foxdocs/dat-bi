@@ -92,7 +92,6 @@ def charts():
     
     
 # Main 
-tab = ''
 # tab = '../data/shopping-data.csv'
 
 try:    
@@ -103,10 +102,17 @@ try:
 except:
     pass   
 st.success("👆 Select the attributes of interest")
-    
-eda(df)
-# a, b, c = viz1(df)
-x, y, z = viz2(df)
+
+try:
+    eda(df)
+    a, b, c = viz1(df)
+    x, y, z = viz2(df)
+# catch when df1 is None
+except AttributeError:
+    pass
+# catch when it hasn't even been defined
+except NameError:
+    pass	
 
 if st.button(":blue[EDA]"):
     # st.write(os.getcwd())
@@ -120,7 +126,8 @@ if st.button(":green[Explore]"):
             container = st.container()
             charts()            
                   
- 
+
+
 
         
 

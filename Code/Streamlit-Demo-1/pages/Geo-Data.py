@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
+df = pd.DataFrame()
+
 #@st.cache_data
 def readData(tab):
     dff = pd.read_csv(tab)
@@ -33,29 +35,36 @@ if tab is not None:
         st.dataframe(df, use_container_width=True)
         if st.button(":green[Explore]"):
                 st.subheader("Explore the Data on Map")           
-    except:
+    # catch when df is None
+    except AttributeError:
         pass
-    
-st.pydeck_chart(pdk.Deck(
-    # map_style=None,     
-    initial_view_state=pdk.ViewState(latitude=55.6761, longitude=12.5683, zoom=6, pitch=50),
-    layers=[
-        pdk.Layer(
-           'HexagonLayer',
-           data=df,
-           get_position='[long, lat]',
-           radius=200,
-           elevation_scale=4,
-           elevation_range=[0, 1000],
-           pickable=True,
-           extruded=True,
-        ),
-        pdk.Layer(
-            'ScatterplotLayer',
-            data=df,
-            get_position='[long, lat]',
-            get_color='[200, 30, 0, 160]',
-            get_radius='value',
-        ),
-    ],
+    # catch when it hasn't even been defined
+    except NameError:
+        pass
+  
+if not df.empty:  
+    st.pydeck_chart(pdk.Deck(
+        # map_style=None,     
+        initial_view_state=pdk.ViewState(latitude=55.6761, longitude=12.5683, zoom=6, pitch=50),
+        # pdk.ViewState(latitude=47.6, longitude=-122.3, zoom=10, pitch=50),
+        layers=[
+            pdk.Layer(
+               'HexagonLayer',
+               data=df,
+               get_position='[long, lat]',
+               radius=200,
+               elevation_scale=4,
+               elevation_range=[0, 1000],
+               pickable=True,
+               extruded=True,
+            ),
+            pdk.Layer(
+                'ScatterplotLayer',
+                data=df,
+                get_position='[long, lat]',
+                get_color='[200, 30, 0, 160]',
+                get_radius='value',
+            ),
+        ],
+        
 ))
