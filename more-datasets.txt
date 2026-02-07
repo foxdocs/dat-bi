@@ -1,0 +1,22 @@
+More Data Repos:
+- https://archive.ics.uci.edu/datasets
+- https://www.javatpoint.com/how-to-get-datasets-for-machine-learning
+- https://careerfoundry.com/en/blog/data-analytics/where-to-find-free-datasets/
+- https://www.statista.com/statistics/1125421/world-mine-reserves-of-gold/
+- Datasets for Data Mining, Data Science, and Machine Learning(https://www.kdnuggets.com/datasets/index.html)
+- Stanford Large Network Dataset Collection (http://snap.stanford.edu/data/index.html)
+- Tableau: https://public.tableau.com/app/learn/sample-data?qt-overview_resources=1
+- Kaggle: https://www.kaggle.com/datasets
+- Video Game Sales with Ratings: https://www.kaggle.com/datasets/rush4ratio/video-game-sales-with-ratings/data
+- Hugging Face: https://huggingface.co/datasets
+- AirBnB: http://insideairbnb.com/get-the-data/
+- Eurostat: https://ec.europa.eu/eurostat/web/main/data/database
+- European Environment Agency Datahub: https://www.eea.europa.eu/en/datahub?size=n_10_n&filters%5B0%5D%5Bfield%5D=issued.date&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=All%20time
+- CDP Cities, States and Regions Open Data Portal: https://data.cdp.net/
+- StatLearning: https://www.statlearning.com/resources-python
+- Starlink satellites: https://satellitemap.space/?constellation=starlink
+- Our World in Data: https://ourworldindata.org/
+- IEEE DataPort: https://ieee-dataport.org/datasets
+- Plotly Datasets"https://github.com/plotly/datasets
+- Freedom House: https://freedomhouse.org 
+- Danmarks Statistik: https://www.dst.dk/da/Statistik/emner/erhvervsliv/erhvervslivets-struktur
