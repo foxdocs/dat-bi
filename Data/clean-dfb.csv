@@ -1,4 +1,4 @@
-address,aldernum,kvmnum,grundnum,vaercat,energicat,liggetid,zipcode,postnr,kommunenavn,prisnum
+address,alder[år],areal[kvm],grund[kvm],værelser[num],energicat,liggetid[dage],zipcode,by,kommune,pris[DKK]
 nyhusvej-5 8585 Glesborg,117,118,19990.0,4,622,0,8585,Glesborg,Norddjurs,1995000
 ramshoejvej-1 8940 Randers SV,57,137,1060.0,5,622,0,8940,Randers SV,Favrskov,1695000
 parken-12-0-th 3480 Fredensborg,61,79,,2,622,0,3480,Fredensborg,Fredensborg,2275000
