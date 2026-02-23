@@ -20,3 +20,12 @@ More Data Repos:
 - Plotly Datasets"https://github.com/plotly/datasets
 - Freedom House: https://freedomhouse.org 
 - Danmarks Statistik: https://www.dst.dk/da/Statistik/emner/erhvervsliv/erhvervslivets-struktur
+
+
+- Boliga: https://www.boliga.dk/
+- Finans Danmark: https://finansdanmark.dk/
+- Danmarks Statistik: https://www.dst.dk/da
+- Statistikbanken: https://statistikbanken.dk/statbank5a/default.asp?w=2560
+- Macrotrends: https://www.macrotrends.net/
+- PostNord: https://www.postnord.dk/
+- World Data: https://www.worlddata.info/
