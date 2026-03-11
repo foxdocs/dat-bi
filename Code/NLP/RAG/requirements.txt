@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain-ollama
+langchain-text-splitters
+langchain-chroma
+beautifulsoup4
+pydentic
+youtube-transcript-api
+pytube
